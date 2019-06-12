@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+
+    <script th:src="@{/webjars/jquery/jquery.min.js}" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"
+            src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script th:src="@{/webjars/Semantic-UI/semantic.min.js}"
+            src="http://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
+    <link th:href="@{/webjars/Semantic-UI/semantic.min.css}" rel="stylesheet"
+          href="http://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css" type="text/css"/>
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet"
+          href="../static/resources/css/style.css" type="text/css"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <link th:href="@{/resources/css/jquery.countdown.css}" rel="stylesheet"
+          href="../static/resources/css/jquery.countdown.css" type="text/css"/>
+    <link th:href="@{/resources/css/popuo-box.css}" rel="stylesheet" href="../static/resources/css/jpopuo-boxn.css"
+          type="text/css"/>
+    <link th:href="@{/resources/css/bootstrap.css}" rel="stylesheet" href="../static/resources/css/bootstrap.css"
+          type="text/css"/>
+    <link th:href="@{/resources/css/style.css}" rel="stylesheet" href="../static/resources/css/style.css"
+          type="text/css"/>
+    <link th:href="@{/resources/css/fasthover.css}" rel="stylesheet" href="../static/resources/css/fasthover.css"
+          type="text/css"/>
+
+    <link th:href="@{/resources/css/font-awesome.css}" rel="stylesheet" href="../static/resources/css/font-awesome.css"
+          type="text/css"/>
+
+
+    <script th:src="@{/resources/js/jquery.min.js}" type="text/javascript"
+            src="../static/resources/js/jquery.min.js"></script>
+
+    <script th:src="@{/resources/js/bootstrap.js}" type="text/javascript"
+            src="../static/resources/js/bootstrap.js"></script>
+            
+                <script th:src="@{/resources/js/jquery-ui.js}" type="text/javascript"
+            src="../static/resources/js/jquery-ui.js"></script>
+    <script th:src="@{/resources/js/jquery.magnific-popup.js}" type="text/javascript"
+            src="../static/resources/js/jquery.magnific-popup.js"></script>
+
+    <script th:src="@{/resources/js/jquery.magnific-popup.js}" type="text/javascript"
+            src="../static/resources/js/jquery.magnific-popup.js"></script>
+    <script th:src="@{/resources/js/script.js}" type="text/javascript" src="../static/resources/js/script.js"></script>
+    <script th:src="@{/resources/js/jquery.countdown.js}" type="text/javascript"
+            src="../static/resources/js/jquery.countdown.js"></script>
+    <script th:src="@{/resources/js/jquery.wmuSlider.js}" type="text/javascript"
+            src="../static/resources/js/jquery.wmuSlider.js"></script>
+    <script th:src="@{/resources/js/jquery.flexisel.js}" type="text/javascript"
+            src="../static/resources/js/jquery.flexisel.js"></script>
+    <script th:src="@{/resources/js/jquery.flexslider.js}" type="text/javascript"
+            src="../static/resources/js/jquery.flexslider.js"></script>
+    <script th:src="@{/resources/js/imagezoom.js}" type="text/javascript"
+            src="../static/resources/js/imagezoom.js"></script>
+    <script th:src="@{/resources/js/minicart.js}" type="text/javascript"
+            src="../static/resources/js/minicart.js"></script>
+    <script th:src="@{/resources/js/easyResponsiveTabs.js}" type="text/javascript"
+            src="../static/resources/js/script.js"></script>
+
+</head>
+<body>
+<nav th:fragment="navigation">
+    <div class="navigation">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse"
+                            data-target="#bs-megadropdown-tabs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav menu__list">
+                        <!-- Mega Menu -->
+                        <li class=" menu__item"><a class="menu__link" th:href="@{/}" >Trang chủ</a></li>
+                        <li class=" menu__item"><a class="menu__link" href="orders.html" th:href="@{/orders}"
+                                                   sec:authorize="hasRole('ROLE_BOSS')" >Đơn Hàng</a>
+                        </li>
+                        <li class=" menu__item"><a class="menu__link" href="stock.html" th:href="@{/stock}"
+                                                   sec:authorize="hasRole('ROLE_BOSS')">Sản Phẩm</a>
+                        </li>
+                        <li class=" menu__item"><a class="menu__link" href="customers.html" th:href="@{/customers}"
+                                                   sec:authorize="hasRole('ROLE_BOSS')" >Khách Hàng</a>
+                        </li>
+                        		<li class="dropdown menu__item">
+						<a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+							<ul class="dropdown-menu multi-column ">
+								<div class="agile_inner_drop_nav_info">
+									<div class=" multi-gd-img">
+										<ul class="multi-column-dropdown">
+											<li class=" menu__item"><a class="menu__link" href="catalog.html" th:href="@{/iphones}">Iphone</a></li>
+                       						<li class=" menu__item"><a class="menu__link" href="catalog.html" th:href="@{/nokias}">Nokia</a></li>
+                       						<li class=" menu__item"><a class="menu__link" href="catalog.html" th:href="@{/samsungs}">Samsung</a></li>
+                       						<li class=" menu__item"><a class="menu__link" href="catalog.html" th:href="@{/oppos}">Oppo</a></li>
+                       						<li class=" menu__item"><a class="menu__link" href="catalog.html" th:href="@{/xiaomis}">Xiaomi</a></li>
+										</ul>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</ul>
+					</li>
+               
+                        <li class=" menu__item"><a class="menu__link" href="cart.html" th:href="@{/cart}"><i
+                                class="fa fa-cart-arrow-down" aria-hidden="true"></i>Giỏ Hàng</a></li>
+                        <li class=" menu__item"><a class="menu__link" href="register.html" th:href="@{/register}"
+                                                   sec:authorize="!hasAnyRole('ROLE_BOSS','ROLE_CUSTOMER')"
+                                                  >Đăng kí</a></li>
+                        <li class=" menu__item"><a class="menu__link" th:href="@{/login}"
+                                                   sec:authorize="!isAuthenticated()" >Đăng Nhập</a>
+                            <form class="item" sec:authorize="isAuthenticated()" th:action="@{/logout}" method="post">
+                                <button type="submit" class="ui button" >Đăng Xuất</button>
+                            </form>
+                        </li>
+                    </ul>
+
+
+                </div>
+
+
+            </nav>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
